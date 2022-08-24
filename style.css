@@ -1,0 +1,398 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input,
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  height: 15vh;
+  background-image: linear-gradient(90deg, #03142e, #031836, #06743d);
+}
+header .headerName {
+  margin-left: 12rem;
+}
+h1,
+#date,
+#time {
+  font-family: "Dancing Script", cursive;
+  color: white;
+}
+.headerName input {
+  margin-left: 1rem;
+}
+h1 input.name {
+  border: none;
+  font-size: 25px;
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 900px;
+  background: transparent;
+  color: white;
+}
+h1 input.name::placeholder {
+  font-size: large;
+  color: white;
+}
+main {
+  display: flex;
+  height: 85vh;
+}
+
+.backLog {
+  width: 450px;
+  background-image: linear-gradient(180deg, #03142e, #031836, #06743d);
+  padding: 2rem 2rem;
+  font-family: cursive;
+  border-top-right-radius: inset 0.5rem;
+  color: white;
+}
+.backLog h3 {
+  margin-top: rem;
+}
+.backLog .line {
+  background-color: rgba(177, 170, 170, 0.493);
+  width: 250px;
+  height: 2px;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+input.inputB {
+  margin-top: 2rem;
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  outline: none;
+  transition: 0.3s;
+}
+input.inputB:focus {
+  border-bottom: 2px solid lightgreen;
+}
+input.inputB::placeholder {
+  font-size: medium;
+  color: rgb(187, 181, 181);
+}
+button.btnB {
+  padding: 7px 10px;
+  color: white;
+  background: transparent;
+  border-radius: 0.4rem;
+  border: 2px solid #06743d;
+  cursor: pointer;
+  margin-bottom: 3rem;
+  transition: 0.3s ease-in-out;
+}
+button.btnB:hover {
+  border: 2px solid lightgreen;
+}
+.backLog .angle {
+  position: absolute;
+  top: 210px;
+  left: 10px;
+  margin-top: 3rem;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid #5db370;
+  border-left: 2px solid #5db370;
+}
+
+#log .logData {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  background: #ffffff3f;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+#log .logData .content .text {
+  color: rgb(206, 206, 206);
+  font-size: 0.9rem;
+  background: none;
+  border: none;
+  transition: 0.4s;
+}
+#log .logData .content .text:not(:read-only) {
+  color: lightblue;
+}
+
+#log .logData .actions {
+  display: flex;
+}
+
+.logData .actions button {
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  transition: 0.4s;
+  padding: 0px 4px;
+}
+
+.logData .actions button:hover {
+  opacity: 0.8;
+}
+
+.logData .actions button:active {
+  opacity: 0.6;
+}
+.logData .actions button.addToDo:hover {
+  color: lightgreen;
+  opacity: 0.6;
+}
+.logData .actions button.edit:hover {
+  color: lightblue;
+  opacity: 0.6;
+}
+.logData .actions button.delete:hover {
+  color: crimson;
+  opacity: 0.6;
+}
+
+.space {
+  display: flex;
+  /* box-shadow: inset 0px 0px 5px rgb(180, 175, 175); */
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #366e42, #4a8cb3a2, #5db370);
+  z-index: 1;
+}
+.todo,
+.progress,
+.done {
+  background: #ffffff3f;
+  /* box-shadow: 1px 1px 7px rgb(180, 175, 175); */
+  flex: 1;
+  border-radius: 10px;
+  margin: 10px;
+  z-index: 5;
+}
+.task {
+  background: #ffffff3f;
+  padding: 15px;
+  height: 50px;
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  color: white;
+}
+.task h2 {
+  color: #111253;
+  background-image: linear-gradient(90deg, #03142e, #031836, #06743d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pop {
+  display: none;
+  position: absolute;
+  border-radius: 10px;
+  top: 80px;
+  left: 420px;
+  padding: 2rem;
+  background-image: linear-gradient(-190deg,#032537d0, #0a411c9f);
+  width: 600px;
+  height: auto;
+  box-shadow: 2px 2px 20px #011a29f5;
+  z-index: 5;
+}
+
+.pop .popBacklog{
+  display: flex;
+  justify-content: space-between;
+  font-size: larger;
+  color: white;
+}
+
+.pop .popBacklog .fas{
+  font-size: larger;
+  cursor: pointer;
+  color: #ee5858;
+}
+.pop .popBacklog .fas:hover {
+  color: #ff0000;
+  font-size: x-large;
+}
+.pop form#new-todo-form h4 {
+  font-size: larger;
+  margin-top: 20px;
+  margin-bottom: 1rem;
+  color: whitesmoke;
+}
+
+.pop form#new-todo-form input#title, input#tasks{
+  background: #ffffff3f;
+  height: 40px;
+  width: 400px;
+  border-radius: 7px;
+  padding: 1rem;
+  font-size: medium;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+.pop form#new-todo-form input#tasks {
+  margin-right: 0px;
+}
+.pop form#new-todo-form input::placeholder {
+  color: #dfdfdf;
+  font-size: medium;
+  font-family: 'Segoe UI', sans-serif;
+}
+.pop form#new-todo-form button.plusBtn{
+  background: #ffffff3f;
+  height: 40px;
+  width: 40px;
+  border-radius: 7px;
+  color: white;
+  font-size: medium;
+  cursor: pointer;
+}
+.pop form#new-todo-form button.plusBtn:hover {
+  color: lightgreen;
+}
+.pop input[type="submit"] {
+  display: block;
+  width: 83%;
+  font-size: 1.125rem;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  background-color: #21434dad;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 40px;
+  font-family: "Open Sans", sans-serif;
+  transition: 0.4s ease-in-out;
+}
+
+.pop input[type="submit"]:hover {
+  color: lightgreen;
+  border: 2px solid lightgreen;
+  /* opacity: 0.75; */
+}
+
+section.taskList {
+  display: block;
+  margin-top: 2rem;
+  /* background: red; */
+}
+.list-cont {
+  display: flex;
+  margin-top: 5px;
+}
+section.taskList .list input {
+  background: #ffffff3f;
+  height: 40px;
+  width: 400px;
+  border-radius: 7px;
+  padding: 1rem;
+  font-size: medium;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+button.edi, button.del {
+  height: 40px;
+  padding: 0.8rem;
+  background: #ffffff3f;
+  color: white;
+  font-family: sans-serif;
+  margin-left: -2px;
+  margin-right: -2px;
+}
+button.del {
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+button.edi:hover {
+  color: lightgreen;
+}
+button.del:hover {
+  color: crimson;
+}
+
+.alarm input {
+  float: right;
+  background: #ffffff3f;
+  padding: 10px;
+  border-radius: 4px;
+}
+.alarm h5 {
+  margin-left: 410px;
+  margin-bottom: 5px;
+  color: whitesmoke;
+
+}
+.alarm input {
+  color: white;
+}
+
+.toDoData {
+  background: white;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 5px 2px rgba(49, 47, 47, 0.192); 
+}
+.toDoData h4 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: larger;
+  font-family: serif;
+  color: #03142e;
+  font-weight: bold;
+}
+.toDoData h5 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: medium;
+  font-family: cursive, "Open Sans", sans-serif;
+  font-weight: 300;
+}
+.toDoData input::placeholder {
+  font-family: cursive, "Open Sans", sans-serif;
+  font-weight: 900;
+}
+.toDoData i.fas {
+  color: lightgreen;
+  cursor: pointer;
+  border: 1px solid lightgreen;
+  border-radius: 50%;
+  padding: 5px 7px;
+}
+
+#iterationTask ul li{
+  margin: 20px;
+  font-family: cursive, sans-serif;
+  font-weight: 400;
+}
+
+input#taskOne, #taskTwo, #taskThree {
+  background: #ffffff3f;
+  width: 350px;
+  margin-top: 10px;
+  padding: 0rem 1rem;
+  border-radius: 0.3rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.toDoData.dragging{
+  opacity: 0.2;
+  background: #06743d46;
+  color: white;
+}

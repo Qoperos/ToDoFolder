@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=DynaPuff&family=Open+Sans:wght@300&family=Rubik+Distressed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="App.js" defer></script>
+    <title>Agile To Do App</title>
+</head>
+<body>
+    <Header>
+        <div class="headerName">
+            <h1>Welcome <input type="text" class="name" id="name" placeholder=" Type your name here . . ."></h1>
+        </div>
+        <div class="timeAndDate">
+            <h3 id="time">
+                <span id="hour">00</span>
+                <span>:</span>
+                <span id="minute">00</span>
+                <span>:</span>
+                <span id="second">00</span>
+                <span id="session">PM</span>
+            </h3>
+            <h3 id="date">
+                <span id="day">Sat</span>
+                <span>,</span>
+                <span id="month">Aug</span>
+                <span id="dayNum">20</span>
+            </h3>
+        </div>
+    </Header>
+    <div class="pop" id="popForm">
+        <div class="popBacklog">
+            <h2>CREATE NEW BACKLOG</h2>
+            <button><i id="close" class="fas fa-circle-xmark"></i></button>
+        </div>
+        <form id="new-todo-form">
+            <h4>To do title :</h4>
+            <input type="text" name="title" id="title" placeholder="Write your title here...">
+            <div class="alarm" id="notification">
+                <h5>Set dead line</h5>
+                <input type="date" name="deadline" id="deadline">
+            </div>
+            <h4>Task Name :</h4>
+            <input type="text" name="subtask" id="tasks" class="list" placeholder="Name your task...">
+            <h4>Tasks</h4>
+            <input type="text" name="taskOne" id="taskOne" placeholder="1.List your todo's">
+            <input type="text" name="taskTwo" id="taskTwo" placeholder="2.List your todo's">
+            <!-- <input type="text" name="taskThree" id="taskThree"> -->
+            <input type="submit" value="Create backlog"> 
+        </form>
+    </div>
+    <main>
+        <div class="backLog">
+            <h3>Todo folder</h3>
+            <div class="line"></div>
+            <input type="text" class="inputB" id="logInput" placeholder="Add new folder ..." autofocus>
+            <button class="btnB" id="logBtn">Add New</button>
+            <div class="angle"></div><br/>
+            <div id="log">
+                <!-- <div class="logData">
+                    <div class="content">
+                        <input type="text" class="text" value="My backlog tasks" readonly>
+                    </div>
+                    <div class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button> 
+                        <button class="addToDo">Add </button>
+                    </div>
+                </div>
+                <div class="logData">
+                    <div class="content">
+                        <input type="text" class="text" value="My backlog tasks" readonly>
+                    </div>
+                    <div class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button> 
+                        <button class="addToDo">Add </button>
+                    </div>
+                </div>
+                <div class="logData">
+                    <div class="content">
+                        <input type="text" class="text" value="My backlog tasks" readonly>
+                    </div>
+                    <div class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button> 
+                        <button class="addToDo">Add </button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="space">
+            <div class="todo conta">
+                <div class="task"><h2>To do list</h2></div>
+                <div id="todoList">
+                    <!-- <div class="toDoData">
+                        <h4>Title :</h4>
+                        <h5>Iteration name :</h5>
+                        <h5>Deadline : </h5>
+                        <form id="iteration">
+                        <input type="text" name="additional" id="addition" placeholder="Add iteration's todo...">
+                        <button class="add-Plus" id="addPlus" type="submit" ><i class="fas fa-plus"></i></button>
+                        </form>
+                        <div id="iterationTask">
+                            <ul>
+                                <li>Developer the header</li>
+                                <button><i class=""></i></button>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="progress conta">
+                <div class="task"><h2>On progress</h2></div>
+            </div>
+            <div class="done conta">
+                <div class="task"><h2>Completed</h2></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
